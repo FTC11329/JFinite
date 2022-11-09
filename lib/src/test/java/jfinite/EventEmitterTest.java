@@ -9,7 +9,7 @@ class EventEmitterTest {
     Boolean hasTransitioned;
 
     @Test
-    void eventEmitterTransistions() {
+    void eventEmitterTransitions() {
         EventEmitter<State> eventEmitter = new EventEmitter<>(State.ENTRY);
 
         eventEmitter.setTransition(State.ENTRY, State.EXIT, () -> false);
@@ -24,15 +24,11 @@ class EventEmitterTest {
     }
 
     @Test
-    void eventEmittterModifiesValue() {
+    void eventEmitterModifiesValue() {
         EventEmitter<State> eventEmitter = new EventEmitter<>(State.ENTRY);
         hasTransitioned = false;
 
-        eventEmitter.register(
-                State.EXIT,
-                () -> {
-                    hasTransitioned = true;
-                });
+        eventEmitter.register(State.EXIT, () -> hasTransitioned = true);
 
         assertEquals(hasTransitioned, false);
 

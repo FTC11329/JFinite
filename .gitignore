@@ -6,3 +6,6 @@ build
 bin
 
 .editorconfig
+
+.idea
+local.properties
