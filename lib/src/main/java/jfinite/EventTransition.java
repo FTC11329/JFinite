@@ -1,4 +1,4 @@
-package subscribe.EventEmitter;
+package jfinite;
 
 public interface EventTransition {
     Boolean check();

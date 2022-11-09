@@ -1,4 +1,4 @@
-package subscribe;
+package jfinite;
 
 enum State {
     ENTRY,

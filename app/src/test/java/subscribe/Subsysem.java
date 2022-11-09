@@ -1,5 +1,0 @@
-package subscribe;
-
-class Subsystem {
-  
-}

@@ -1,4 +1,4 @@
-package subscribe.EventEmitter;
+package jfinite;
 
 import java.util.ArrayList;
 import java.util.HashMap;
