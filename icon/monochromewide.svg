@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="200mm"
+   height="100mm"
+   viewBox="0 0 200 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="monochromewide.svg"
+   inkscape:export-filename="monochromewide.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.5215769"
+     inkscape:cx="369.35367"
+     inkscape:cy="178.1047"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1072"
+     inkscape:window-y="305"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#1a1a1a;stroke:none;stroke-width:0.374177"
+       id="rect707"
+       width="200"
+       height="100"
+       x="0"
+       y="0"
+       ry="15.281525" />
+    <g
+       aria-label="{ }"
+       id="text113"
+       style="font-size:97.0139px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ff0000;stroke-width:0.264583">
+      <path
+         d="m 6.2537415,47.844663 q 4.5475265,-0.14211 6.7739195,-2.179023 2.273764,-2.084283 2.273764,-5.352818 0,-1.705322 -1.136882,-6.726549 -1.089512,-5.021228 -1.089512,-8.952943 0,-9.805605 5.494928,-14.6847217 5.542298,-4.9264872 16.674265,-5.1159675 h 1.231621 v 3.6001253 h -0.710551 q -6.86866,0 -10.753005,3.6001249 -3.884346,3.552755 -3.884346,11.747777 0,3.315905 0.947401,8.195022 0.947402,4.879117 0.947402,6.9634 0,4.026456 -2.368504,6.63181 -2.368503,2.557984 -5.637038,3.789605 v 0.852662 q 3.268535,1.231621 5.637038,3.836975 2.368504,2.557984 2.368504,6.58444 0,2.084283 -0.947402,6.9634 -0.947401,4.879117 -0.947401,8.195022 0,8.621352 3.884346,12.174107 3.884345,3.600126 10.753005,3.600126 h 0.710551 v 3.600125 h -1.231621 q -11.131967,-0.18948 -16.674265,-5.115968 -5.494928,-4.879117 -5.494928,-15.111051 0,-3.931716 1.089512,-8.952943 1.136882,-5.021228 1.136882,-6.72655 0,-3.268535 -2.273764,-5.305448 -2.226393,-2.084283 -6.7739195,-2.226393 z"
+         style="stroke:none"
+         id="path1248" />
+      <path
+         d="m 93.746261,51.776379 q -4.547527,0.14211 -6.82129,2.226393 -2.226394,2.036913 -2.226394,5.305448 0,1.705322 1.089512,6.72655 1.136882,5.021227 1.136882,8.952943 0,10.184564 -5.542298,15.063681 -5.494928,4.926488 -16.626894,5.115968 h -1.231622 v -3.600125 h 0.710551 q 6.86866,0 10.753005,-3.600126 3.884346,-3.552755 3.884346,-12.126737 0,-3.315905 -0.947401,-8.195022 -0.947402,-4.879117 -0.947402,-6.9634 0,-4.026456 2.368504,-6.58444 2.368503,-2.605353 5.637038,-3.836975 v -0.852661 q -3.268535,-1.231622 -5.637038,-3.789606 -2.368504,-2.605354 -2.368504,-6.63181 0,-2.084283 0.947402,-6.9634 0.947401,-4.879117 0.947401,-8.195022 0,-8.242392 -3.884346,-11.795147 Q 71.103368,8.4327661 64.234708,8.4327661 H 63.524157 V 4.8326408 h 1.231622 q 11.131966,0.1894803 16.626894,5.1159675 5.542298,4.8791167 5.542298,14.7320917 0,3.931715 -1.136882,8.952943 -1.089512,5.021227 -1.089512,6.726549 0,3.268535 2.226394,5.352818 2.273763,2.036913 6.82129,2.179023 z"
+         style="stroke:none"
+         id="path1250" />
+    </g>
+    <g
+       aria-label="J
+F"
+       id="text327"
+       style="font-size:42.3333px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.264583">
+      <path
+         d="m 42.413906,41.45045 v -3.451983 l 1.364257,0.454752 q 2.831866,0.930175 4.485511,0.930175 2.914548,0 4.072099,-1.508951 1.178222,-1.50895 1.178222,-5.333003 V 18.340767 h -9.177727 v -3.059243 h 13.249827 v 15.089507 q 0,4.030759 -0.475423,5.994462 -0.475423,1.963703 -1.819009,3.451983 -2.356443,2.625161 -6.738602,2.625161 -2.377114,0 -6.139155,-0.992187 z"
+         id="path1253" />
+      <path
+         d="M 40.563891,84.718476 V 58.198151 H 59.43611 v 3.059243 H 44.635991 v 9.136386 h 12.62971 v 3.059243 h -12.62971 v 11.265453 z"
+         id="path1255" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46667px;font-family:Cambria;-inkscape-font-specification:Cambria;text-align:center;text-anchor:middle;fill:#1a1a1a;stroke:none;stroke-width:0.264583"
+       x="195.79839"
+       y="41.739956"
+       id="text1315"><tspan
+         sodipodi:role="line"
+         id="tspan1313"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46667px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         x="195.79839"
+         y="41.739956">java state machines</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46667px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         x="195.79839"
+         y="52.447399"
+         id="tspan1421" /><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46667px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         x="195.79839"
+         y="63.154842"
+         id="tspan1437">dynamic, simple.</tspan></text>
+  </g>
+</svg>
