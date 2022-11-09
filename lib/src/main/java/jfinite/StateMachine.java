@@ -5,18 +5,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-public class EventEmitter<T extends Enum<T>> {
+public class StateMachine<T extends Enum<T>> {
 
     protected T currentState;
-    protected HashMap<T, List<EventHandler>> events = new HashMap<>();
-    protected HashMap<T, HashMap<T, EventTransition>> transitions = new HashMap<>();
+    protected HashMap<T, List<StateBehaviour>> behaviours = new HashMap<>();
+    protected HashMap<T, HashMap<T, Conditions>> transitions = new HashMap<>();
 
     /*
      * Allows a subsystem to register a method to be called when the <pre>EventEmitter</pre> transitions to state.
      *
      * @param initialState The initial state for the <pre>EventEmitter</pre> to start in
      */
-    public EventEmitter(T initialState) {
+    public StateMachine(T initialState) {
         currentState = initialState;
     }
 
@@ -26,10 +26,10 @@ public class EventEmitter<T extends Enum<T>> {
      * @param  state The target state to wait for
      * @param callee The method to call on transition
      */
-    public void register(T state, EventHandler callee) {
-        events.computeIfAbsent(state, k -> new ArrayList<>());
+    public void register(T state, StateBehaviour callee) {
+        behaviours.computeIfAbsent(state, k -> new ArrayList<>());
 
-        events.get(state).add(callee);
+        behaviours.get(state).add(callee);
     }
 
     /*
@@ -39,7 +39,7 @@ public class EventEmitter<T extends Enum<T>> {
      * @param targetState The state to transition to when <pre>condition</pre> goes true
      * @param   condition The condition to check before transitioning to <pre>targetState</pre>
      */
-    public void setTransition(T activeState, T targetState, EventTransition condition) {
+    public void setTransitionCondition(T activeState, T targetState, Conditions condition) {
         transitions.computeIfAbsent(activeState, k -> new HashMap<>());
 
         transitions.get(activeState).put(targetState, condition);
@@ -48,8 +48,8 @@ public class EventEmitter<T extends Enum<T>> {
     /*
      * The function to periodically call in order to allow the <pre>EventEmitter</pre> to make transitions.
      */
-    public void checkTransition() {
-        HashMap<T, EventTransition> activeTransitions = transitions.get(currentState);
+    public void update() {
+        HashMap<T, Conditions> activeTransitions = transitions.get(currentState);
 
         Set<T> conditions = activeTransitions.keySet();
 
@@ -64,8 +64,8 @@ public class EventEmitter<T extends Enum<T>> {
     private void transitionTo(T state) {
         currentState = state;
 
-        if (events.get(state) != null) {
-            for (EventHandler method : events.get(state)) {
+        if (behaviours.get(state) != null) {
+            for (StateBehaviour method : behaviours.get(state)) {
                 try {
                     method.call();
                 } catch (Exception e) {

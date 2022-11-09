@@ -1,5 +1,5 @@
 package jfinite;
 
-public interface EventHandler {
+public interface StateBehaviour {
     void call();
 }
