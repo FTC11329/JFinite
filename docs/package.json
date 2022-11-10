@@ -1,0 +1,19 @@
+{
+  "name": "jFinite-docsc",
+  "version": "0.0.1",
+  "description": "A simple and elegant java Finite State Machine framework.",
+  "main": "index.js",
+  "authors": {
+    "name": "FRC 3494",
+    "email": "frc3494@gmail.com"
+  },
+  "repository": "https://github.com/11329ICERobotics/JFinite/JFinite",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
