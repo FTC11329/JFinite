@@ -8,7 +8,11 @@ import java.util.Set;
 public class StateMachine<T extends Enum<T>> {
 
     protected T currentState;
+
     protected HashMap<T, List<StateBehaviour>> behaviours = new HashMap<>();
+    protected HashMap<T, List<StateBehaviour>> loopedBehaviours = new HashMap<>();
+    protected HashMap<T, List<StateBehaviour>> cleanupBehaviours = new HashMap<>();
+
     protected HashMap<T, HashMap<T, Conditions>> transitions = new HashMap<>();
 
     /*
@@ -26,10 +30,24 @@ public class StateMachine<T extends Enum<T>> {
      * @param  state The target state to wait for
      * @param callee The method to call on transition
      */
-    public void register(T state, StateBehaviour callee) {
+    public void addBehaviour(T state, StateBehaviour callee) {
         behaviours.computeIfAbsent(state, k -> new ArrayList<>());
 
         behaviours.get(state).add(callee);
+    }
+
+    public void addLoopedBehaviour(T state, StateBehaviour loopedBehaviour) {
+        loopedBehaviours.computeIfAbsent(state, k -> new ArrayList<>());
+
+        loopedBehaviours.get(state).add(loopedBehaviour);
+    }
+
+    public void addLoopedBehaviour(T state, StateBehaviour loopedBehaviour, StateBehaviour cleanupBehaviour) {
+        loopedBehaviours.computeIfAbsent(state, k -> new ArrayList<>());
+        cleanupBehaviours.computeIfAbsent(state, k -> new ArrayList<>());
+
+        loopedBehaviours.get(state).add(loopedBehaviour);
+        cleanupBehaviours.get(state).add(cleanupBehaviour);
     }
 
     /*
@@ -49,19 +67,37 @@ public class StateMachine<T extends Enum<T>> {
      * The function to periodically call in order to allow the <pre>EventEmitter</pre> to make transitions.
      */
     public void update() {
+        // Check transitions
         HashMap<T, Conditions> activeTransitions = transitions.get(currentState);
 
-        Set<T> conditions = activeTransitions.keySet();
+        if (activeTransitions != null) {
+            Set<T> conditions = activeTransitions.keySet();
 
-        for (T event : conditions) {
-            if (activeTransitions.get(event).check()) {
-                transitionTo(event);
-                break;
+            if (conditions != null) {
+                for (T event : conditions) {
+                    if (activeTransitions.get(event).check()) {
+                        transitionTo(event);
+                        return;
+                    }
+                }
+            }
+        }
+
+        // Run Looped Behaviours
+        if (loopedBehaviours.get(currentState) != null) {
+            for (StateBehaviour loopedBehaviour : loopedBehaviours.get(currentState)) {
+                loopedBehaviour.call();
             }
         }
     }
 
     private void transitionTo(T state) {
+        if (cleanupBehaviours.get(currentState) != null) {
+            for (StateBehaviour cleanup : cleanupBehaviours.get(currentState)) {
+                cleanup.call();
+            }
+        }
+
         currentState = state;
 
         if (behaviours.get(state) != null) {
@@ -74,7 +110,7 @@ public class StateMachine<T extends Enum<T>> {
             }
         }
     }
-
+    // If you read this your cringe why are you reading this stinky library :)
     /*
      * Gets the current state of the <pre>EventEmitter</pre>
      *

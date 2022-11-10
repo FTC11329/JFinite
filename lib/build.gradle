@@ -9,6 +9,8 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'java-library'
+    id 'maven-publish'
+    id 'signing'
 }
 
 repositories {
@@ -27,4 +29,99 @@ dependencies {
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+group = "com.11329icerobotics.jfinite"
+archivesBaseName = "jfinite"
+version = "1.0.0"
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/11329icerobotics/jfinite")
+            credentials {
+                username = System.getenv("SECRET_USERNAME")
+                password = System.getenv("SECRET_TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            artifactId = 'jfinite'
+            from components.java
+
+            pom {
+                name = 'jfinite'
+                packaging = 'jar'
+                // optionally artifactId can be defined here
+                description = 'A lightweight tool to define finite state machines in Java'
+                url = 'https://github.com/11329ICERobotics/JFinite'
+
+                scm {
+                    connection = 'scm:git:https://github.com/11329ICERobotics/JFinite.git'
+                    developerConnection = 'scm:git:https://github.com/11329ICERobotics/JFinite.git'
+                    url = 'https://github.com/11329ICERobotics/JFinite'
+                }
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'FizzyApple12'
+                        name = 'Hazel Roeder'
+                        email = 'davideroeder@gmail.com'
+                    }
+                    developer {
+                        id = 'Kennan'
+                        name = 'Kennan Hunter'
+                        email = 'kennanhunter5@gmail.com'
+                    }
+                    developer {
+                        id = 'SB510'
+                        name = 'Sean Borneman'
+                        email = 'sean.borneman@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.gpr
+    useInMemoryPgpKeys(
+        System.getenv('SIGNING_SECRET_KEY'),
+        System.getenv('SIGNING_PASSWORD')
+    )
 }

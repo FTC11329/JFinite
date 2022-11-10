@@ -4,7 +4,7 @@
     "files.trimTrailingWhitespace": false,
     "spotlessGradle.diagnostics.enable": true,
     "spotlessGradle.format.enable": true,
-    "editor.defaultFormatter": "richardwillis.vscode-spotless-gradle",
+    "editor.defaultFormatter": "ms-vsliveshare.vsliveshare",
     "editor.codeActionsOnSave": {
       "source.fixAll.spotlessGradle": true
     }
