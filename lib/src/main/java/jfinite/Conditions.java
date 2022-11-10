@@ -1,5 +1,5 @@
 package jfinite;
 
-public interface EventTransition {
+public interface Conditions {
     Boolean check();
 }

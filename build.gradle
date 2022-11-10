@@ -1,0 +1,36 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id "com.diffplug.spotless" version "6.11.0"
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'com.diffplug.spotless'
+
+    spotless {
+        format 'misc', {
+            // define the files to apply `misc` to
+            target '*.gradle', '*.md', '.gitignore'
+
+            // define the steps to apply to those files
+            indentWithSpaces() // Default 4
+            endWithNewline()
+        }
+        java {
+            target 'src/*/java/**/*.java'
+
+            // apply a specific flavor of google-java-format
+            importOrder()
+            palantirJavaFormat('2.9.0')
+            indentWithSpaces() // Default 4
+
+            // fix formatting of type annotations
+            formatAnnotations()
+        }
+    }
+}
