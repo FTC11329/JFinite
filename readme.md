@@ -14,21 +14,11 @@ A simple and elegant Finite State Machine framework. To learn more read [the doc
 
 1. Authenticate with [github packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry#authenticating-to-github-packages)
 
-1. Then, in your `/TeamCode/build.gradle`, Add the lines
+1. Then, in your `build.gradle`, Add the lines
 
 ```groovy
 dependencies {
-    implementation 'com.example:package'
-}
-
-repositories {
-    maven {
-        url = uri("https://maven.pkg.github.com/OWNER/REPOSITORY")
-        credentials {
-            username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-            password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
-        }
-    }
+    implementation ' com.11329icerobotics.jfinite.jfinite'
 }
 ```
 
