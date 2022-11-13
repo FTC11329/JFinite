@@ -10,6 +10,8 @@ module.exports = {
    */
   description: description,
 
+  base: "/JFinite/",
+
   /**
    * Extra tags to be injected to the page HTML `<head>`
    *
@@ -38,7 +40,7 @@ module.exports = {
     nav: [
       {
         text: "GitHub",
-        link: "https://github.com/11329ICERobotics/JFinite",
+        link: "https://github.com/11329ICERobotics/JFinite/",
       },
     ],
     sidebar: {
